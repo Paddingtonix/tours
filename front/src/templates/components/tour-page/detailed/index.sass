@@ -1,0 +1,45 @@
+.detailed-tour
+    &__top
+        margin-top: 24px
+        padding-top: 32px
+        display: flex
+        flex-wrap: wrap
+        border-top: 1px solid #F3F4F6
+        
+    &__column
+        column-count: 2
+        column-gap: 16px
+
+    &__main
+        width: calc((100% - 32px)/2)
+        padding-bottom: 32px
+        &:not(:nth-child(2n))
+            margin-right: 32px
+
+    &__item
+        display: flex
+        align-items: flex-start
+        -webkit-column-break-inside: avoid
+        &:not(:last-child)
+            margin-bottom: 16px
+
+    &__img
+        width: 20px
+        height: 20px
+        margin-right: 8px
+        flex-shrink: 0
+
+    &__title
+        margin-bottom: 24px
+        font-size: 12px
+        font-weight: 700
+        color: $secondary-title
+        text-transform: uppercase
+
+    &__text
+        font-size: 14px
+        line-height: 120%
+
+    &__desc
+        padding-top: 32px
+        border-top: 1px solid #F3F4F6

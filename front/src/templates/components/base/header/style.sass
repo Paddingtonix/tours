@@ -1,0 +1,93 @@
+.header
+    display: flex
+    flex-direction: column
+    width: 100%
+    z-index: 5
+
+    &._scroll
+        height: 96px
+        &:after
+            transform: translateY(-96px)
+    &._small
+        &:after
+            height: 96px
+
+    &__top
+        padding-top: 12px
+        padding-bottom: 12px
+        display: flex
+        align-items: center
+        z-index: 1
+
+    &__logo
+        margin: 6px 0 14px
+        display: block
+
+    &__wrap
+        padding: 0 48px 0 113px
+        display: flex
+        align-items: center
+        flex-grow: 1
+
+    &-nav
+        margin-right: auto
+        ul
+            display: flex
+            align-items: center
+            li
+                &:not(:last-child)
+                    margin-right: 48px
+        &__item
+            font-size: 18px
+            display: block
+
+    &__create-tour
+        font-weight: 500
+        font-size: 18px
+        display: block
+        margin-left: auto
+
+    &__lang
+        margin-left: 48px
+
+    &-profile
+        padding: 5px 5px 5px 15px
+        margin-left: auto
+        background-color: $bg
+        border: 1px solid #F3F4F6
+        border-radius: 12px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        &__icon
+            margin-left: 16px
+
+    &__bottom
+        padding-bottom: 8px
+        display: flex
+        justify-content: center
+        align-items: flex-start
+        z-index: 1
+        transform: translateY(0)
+        transition: transform .3s
+        &._scroll
+            transform: translateY(calc(-96px + 12px))
+            max-width: 1254px
+
+    &-search-small
+        padding: 4px
+        margin: 0 auto
+        display: flex
+        align-items: center
+        background: #FFFFFF
+        border: 1px solid #F3F4F6
+        border-radius: 12px
+        cursor: pointer
+        &__text
+            margin: 0 5px
+            width: 192px
+            color: #B5BCC7
+            text-align: center
+        &__btn.header-search__btn
+            padding: 7px
+            border-radius: 8px

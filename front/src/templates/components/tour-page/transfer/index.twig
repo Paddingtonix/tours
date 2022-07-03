@@ -1,0 +1,20 @@
+<section class="transfer" v-animation:bottom.delay>
+    {% for item in transfer %}
+        <div class="transfer-card card-style">
+            <div class="transfer-card__container">
+                <div class="transfer-card__type">
+                    {% if item.img %}
+                        <div class="transfer-card__type-img">
+                            <img src="{{ item.img }}"/>
+                        </div>
+                    {% endif %}
+                    <div class="transfer-card__type-name">{{ item.type }}</div>
+                </div>
+                <div class="transfer-card__main">
+                    <h4 class="transfer-card__main-title">{{ item.title }}</h4>
+                    <div class="transfer-card__main-desc">{{ item.desc }}</div>
+                </div>
+            </div>    
+        </div>
+    {% endfor %}
+</section>

@@ -1,0 +1,98 @@
+.filter-modal-budget
+    &._small
+        padding: 8px 0 24px
+        .filter-modal-budget__container
+            border: none
+            padding: 0
+        .filter-modal-budget-drag
+            padding: 0
+        .filter-modal-budget-drag__left, .filter-modal-budget-drag__right
+            width: 16px
+            height: 16px
+            margin-bottom: -7px
+        .filter-modal-budget__item
+            margin: 0 1px
+
+    &__container
+        margin-top: 24px
+        padding: 24px 20px
+        position: relative
+    &__content
+        display: flex
+        align-items: flex-end
+    &__item
+        margin: 0 2px
+        background: #EEF0F4
+        border-radius: 2px 2px 0 0
+        transition: background .2s
+        &._active
+            background: #FDDCC5
+    &-drag
+        padding: 24px 20px
+        position: absolute
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        display: flex
+        align-items: flex-end
+        &__left, &__right
+            margin-bottom: -11px
+            cursor: pointer
+            flex-shrink: 0
+        &__wrap
+            flex: 1
+            border-bottom: 2px solid #F27E29
+    &__row
+        margin: 16px 0
+        display: flex
+    &__price
+        padding: 16px
+        width: calc((100% - 48px)/2)
+        &:first-child
+            margin-right: 48px
+            position: relative
+            &:after
+                content: ''
+                position: absolute
+                top: 50%
+                right: -32px
+                width: 16px
+                height: 1px
+                background: #B5BCC7
+        &-name
+            margin-bottom: 2px
+            font-size: 12px
+            line-height: 120%
+            font-weight: 700
+            color: $gray-text
+            text-transform: uppercase
+        &-input
+            input
+                font-size: 16px
+                line-height: 120%
+                width: 84px
+                color: $base-text
+
+    &-info
+        padding: 8px 12px
+        margin-left: auto
+        width: fit-content
+        display: flex
+        align-items: center
+        background: #F3F4F6
+        border: 1px solid #EEF0F4
+        border-radius: 12px
+        transition: all .2s
+        &__price
+            font-size: 14px
+            line-height: 18px
+            color: #5D7982
+        &__reset
+            margin-left: 8px
+            cursor: pointer
+            svg
+                pointer-events: none
+        &._active
+            background: #E9F6F2
+            border: 1px solid #D4F2E9

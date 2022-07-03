@@ -1,0 +1,53 @@
+.modal
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    background: rgba(#000000, 0.4)
+    z-index: 100
+
+    &__wrap
+        max-width: 880px
+        width: 100%
+        border-radius: 16px
+        position: relative
+        background-color: #ffffff
+        overflow: hidden
+
+    &__head
+        padding: 24px
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+    &__close
+        margin-left: auto
+        cursor: pointer
+        svg path
+            transition: stroke .2s
+        &:hover
+            svg path
+                stroke: $primary
+
+    &__title
+        margin-right: 24px
+
+    &__content
+        padding: 24px
+        max-height: 85vh
+        overflow-y: auto
+        &._bg
+            background: $bg
+
+    &__subtitle
+        font-size: 22px
+        margin-bottom: 8px
+
+@import "./about-room/style.sass"
+@import "./rating-reviews/style.sass"
+

@@ -1,0 +1,116 @@
+.filter
+    position: relative
+
+    &__container
+        display: flex
+        align-items: center
+
+    &__category
+        width: 232px
+        position: relative
+        &:not(:last-child)
+            margin-right: 6px
+        &._open
+            .filter__arrow
+                transform: rotate(180deg)
+            .filter__category-title
+                border: 1px solid $border
+
+        &-title
+            padding: 15px
+            color: #B5BCC7
+            display: flex
+            align-items: center
+            justify-content: space-between
+            cursor: pointer
+            border-radius: 12px
+            transition: border .2s, box-shadow .2s
+            &:hover
+                box-shadow: 0 16px 32px -4px rgba(16, 64, 61, 0.04)
+                .filter__arrow path
+                    fill: $primary
+        &-text
+            white-space: nowrap
+            text-overflow: ellipsis
+            overflow: hidden
+            &._active
+                color: $base-text
+
+    &__arrow
+        margin-left: 8px
+        flex-shrink: 0
+        transition: all .3s
+        path
+            transition: all .3s
+
+    &-list
+        margin-top: 8px
+        position: absolute
+        top: 100%
+        left: 0
+        width: 320px
+        padding: 8px 4px 8px 8px
+        z-index: 1
+        &__container
+            padding-right: 4px
+            max-height: 420px
+            overflow-y: auto
+        &-head
+            padding: 12px 12px 20px
+            margin-bottom: 8px
+            display: flex
+            justify-content: space-between
+            align-items: center
+            border-bottom: 1px solid #F3F4F6
+            &__left
+                font-weight: 600
+                font-size: 18px
+                line-height: 100%
+            &__btn
+                font-size: 18px
+                line-height: 100%
+                color: $primary
+                cursor: pointer
+                transition: color .2s
+                &:hover
+                    color: $dark-primary
+        &__item
+            padding: 12px
+            input[type="checkbox"]
+                display: none
+        &__input
+            &:checked + .filter-list__label:before
+                background: $primary
+                border-color: $primary
+            &:checked + .filter-list__label .filter-list__ok
+                opacity: 1
+        &__label
+            padding-left: 36px
+            min-height: 24px
+            display: block
+            position: relative
+            cursor: pointer
+            transition: color .2s
+            span
+                padding-top: 2px
+                display: block
+            &:before
+                content: ''
+                position: absolute
+                left: 0
+                top: 0
+                width: 22px
+                height: 22px
+                border: 1px solid #EEF0F4
+                background: $bg
+                border-radius: 4px
+                transition: all .2s
+            &:hover
+                color: $primary
+        &__ok
+            position: absolute
+            left: 2px
+            top: 2px
+            z-index: 1
+            opacity: 0
+            transition: all .2s

@@ -1,0 +1,67 @@
+.purchase-confirmation
+    padding: 32px 24px 24px
+    margin-bottom: 24px
+    display: flex
+    flex-direction: column
+
+    &__detailed
+        margin-top: 16px
+        margin-bottom: 24px
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        &-text
+            font-size: 18px
+            color: $dark-gray
+            line-height: 100%
+            &:not(:first-child)
+                margin-left: 29px
+                position: relative
+                &:before
+                    margin-top: -2px
+                    content: ''
+                    position: absolute
+                    left: -16px
+                    top: 50%
+                    width: 4px
+                    height: 4px
+                    border-radius: 50%
+                    background: $gray-text
+
+    &-sales
+        padding-top: 24px
+        border-top: 1px solid #F3F4F6
+        &__item
+            margin-bottom: 24px
+            font-size: 18px
+            line-height: 120%
+            display: flex
+            align-items: center
+            justify-content: space-between
+
+        &__final
+            margin-bottom: 24px
+            display: flex
+            align-items: center
+            justify-content: space-between
+            &-left
+                display: flex
+                align-items: center
+                svg
+                    position: relative
+            &-text
+                margin-right: 8px
+                font-size: 22px
+                color: $dark-gray
+            &-value
+                font-size: 24px
+                color: $primary
+                line-height: 120%
+
+    &__one-click
+        margin-top: 16px
+
+    .wrapper
+        position: relative
+        .tooltip-components
+            width: 360px

@@ -1,0 +1,43 @@
+.sort
+    width: 232px
+    position: relative
+
+    &__container
+        padding: 15px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        cursor: pointer
+        border-radius: 12px
+        transition: border .2s, box-shadow .2s
+        &._open
+            border: 1px solid $border
+            .sort__arrow
+                transform: rotate(180deg)
+        &:hover
+            box-shadow: 0 16px 32px -4px rgba(16, 64, 61, 0.04)
+            .sort__arrow path
+                fill: $primary
+
+    &__arrow
+        margin-left: 8px
+        flex-shrink: 0
+        transition: all .3s
+        path
+            transition: all .3s
+
+    &-list
+        margin-top: 8px
+        padding: 8px
+        position: absolute
+        top: 100%
+        left: 0
+        width: 100%
+        z-index: 1
+        &__item
+            padding: 12px
+            display: block
+            transition: color .2s
+            cursor: pointer
+            &:hover
+                color: $primary

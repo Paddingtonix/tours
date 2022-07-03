@@ -1,0 +1,60 @@
+.card-slider
+    height: 100%
+    border-radius: 12px
+    overflow: hidden
+    &:hover
+        .card-slider__prev, .card-slider__next, .card-slider__pag
+            opacity: 1
+        .card-slider__prev, .card-slider__next
+            &.disable
+                opacity: .7
+
+    &__swiper
+        height: 100%
+
+    &__slide
+        transition: transform .5s
+        &:hover
+            transform: scale3d(1.04,1.04,1.04)
+    &__img
+        height: 100%
+        img
+            height: 100%
+            width: 100%
+            object-fit: cover
+
+    &__prev, &__next
+        width: 32px
+        height: 32px
+        margin-top: -16px
+        background: #FFFFFF
+        border-radius: 6px
+        opacity: 0
+        transition: transform .2s, opacity .2s
+        &:after
+            font-size: 14px
+            color: $base-text
+            transition: color .2s
+        &:hover
+            &:after
+                color: $primary
+        &:active
+            transform: scale3d(.97,.97,.97)
+        &.disable
+            pointer-events: none
+            opacity: 0
+
+    &__pag
+        opacity: 0
+        transition: opacity .2s
+        .swiper-pagination-bullet
+            background: #FFFFFF
+            width: 5px
+            height: 5px
+            border-radius: 12px
+            opacity: .6
+            cursor: pointer
+            transition: all .2s
+        .swiper-pagination-bullet-active
+            width: 20px
+            opacity: 1

@@ -1,0 +1,55 @@
+<header-cmp inline-template>
+    <header class="header" :class="{_scroll: isMenuScroll, _small: isHeaderSmall}">
+        <div class="header__top container">
+            <a v-link href="/" class="header__logo">
+            </a>
+            <div v-if="!isMenuScroll" class="header__wrap">
+                <nav class="header-nav">
+                    <ul>
+                        {% for item in navigationHeader %}
+                            <li>
+                                <a v-link href="{{ item.link }}" class="header-nav__item link-hover">
+                                    {{ item.name }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+
+				<div v-if="isHeaderSmall" @click="updateHeaderSmall(false)" class="header-search-small">
+					<div class="header-search-small__text">Искать туры</div>
+					<div class="header-search-small__btn header-search__btn">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#F27E29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M20.9999 20.9984L16.6499 16.6484" stroke="#F27E29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</div>
+				</div>
+
+                <a v-link href="/" class="header__create-tour link-hover">
+					Создать свой тур
+				</a>
+
+				<div class="header__lang">
+					<svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#10403D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M2 12H22" stroke="#10403D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2V2Z" stroke="#10403D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</div>
+			</div>
+
+            <div class="header-profile">
+                {% include "@components/ui-components/burger/template.twig" %}
+                <div class="header-profile__icon">
+                    <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" y="0.5" width="32" height="32" rx="11.5" fill="#F3F4F6"/>
+                        <path d="M26 30.5V28C26 26.6739 25.4732 25.4021 24.5355 24.4645C23.5979 23.5268 22.3261 23 21 23H11C9.67392 23 8.40215 23.5268 7.46447 24.4645C6.52678 25.4021 6 26.6739 6 28V30.5" stroke="#5D7982" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 18C18.7614 18 21 15.7614 21 13C21 10.2386 18.7614 8 16 8C13.2386 8 11 10.2386 11 13C11 15.7614 13.2386 18 16 18Z" stroke="#5D7982" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="0.5" y="0.5" width="32" height="32" rx="11.5" stroke="#DCE6E7"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+</header-cmp>

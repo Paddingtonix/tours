@@ -1,0 +1,8 @@
+<div class="title-visa">
+    <h1 class="title-visa__title title">{{ title }}</h1>
+    {% if visa == 1 %}
+        <span class="title-visa__visa">виза нужна</span>
+    {% elseif visa == 0 %}
+        <span class="title-visa__visa">виза не нужна</span>
+    {% endif %}
+</div>

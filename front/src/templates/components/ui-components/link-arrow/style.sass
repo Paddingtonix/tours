@@ -1,0 +1,30 @@
+.link-arrow
+    width: fit-content
+    width: -moz-fit-content
+    display: flex
+    align-items: center
+    color: $primary
+    transition: color .2s
+    span
+        padding-top: 2px
+        font-size: 18px
+        line-height: 100%
+        display: block
+    svg
+        transition: transform .2s
+        path
+            transition: fill .2s
+    &:hover
+        color: $dark-primary
+        svg
+            transform: translateX(3px)
+            path
+                fill: $dark-primary
+    &:active
+        color: $dark-gray
+        svg path
+            fill: $dark-gray
+    &._small
+        span
+            font-size: 14px
+            line-height: 120%

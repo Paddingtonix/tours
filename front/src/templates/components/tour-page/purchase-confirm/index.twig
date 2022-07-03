@@ -1,0 +1,42 @@
+<div class="purchase-confirmation card-style" v-animation:bottom.delay>
+    <h2 class="title">{{ confirm.dates }}</h2>
+    <div class="purchase-confirmation__detailed">
+        <div class="purchase-confirmation__detailed-text">{{ confirm.days }}</div>
+        <div class="purchase-confirmation__detailed-text">{{ confirm.count }}</div>
+    </div>
+    <div class="purchase-confirmation-sales">
+        <div class="purchase-confirmation-sales__item">
+            <div>Первоначальная стоимость</div>
+            <div class="purchase-confirmation-sales__price _rouble">
+                {{ confirm.startCost|number_format(0, '', ' ') }}
+            </div>
+        </div>
+        <div class="purchase-confirmation-sales__item">
+            <div>Персональная скидка</div>
+            <div class="purchase-confirmation-sales__price _rouble">
+                {{ confirm.discount|number_format(0, '', ' ') }}
+            </div>
+        </div>
+        <div class="purchase-confirmation-sales__final">
+            <div class="purchase-confirmation-sales__final-left">
+                <div class="purchase-confirmation-sales__final-text">Итого</div>
+                <div class="tooltip wrapper">
+                    <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 14.9706 5.02944 19 10 19Z" stroke="#B5BCC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10 13.6V10" stroke="#B5BCC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10 6.40002H10.009" stroke="#B5BCC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <tooltip-cmp
+                        text="Указана итоговая стоимость пакетного тура в базовой комплектации. Дополнительные услуги и опции вы сможете выбрать при оформлении тура"
+                    >
+                    </tooltip-cmp>
+                </div>
+            </div>
+            <div class="_price _rouble">{{ confirm.finalCost|number_format(0, '', ' ') }}</div>
+        </div>
+    </div>
+    <a class="btn">Оформить тур</a>
+    <button class="purchase-confirmation__one-click btn _white">
+        Купить в "один клик"
+    </button>
+</div>

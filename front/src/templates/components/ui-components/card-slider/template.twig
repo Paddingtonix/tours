@@ -1,0 +1,16 @@
+<card-slider inline-template :key="{{ card.id }}">
+    <div @click.stop="" class="card-slider">
+        <swiper :options="cardSlider" class="card-slider__swiper">
+            {% for item in slider %}
+                <swiper-slide class="card-slider__slide">
+                    <div class="card-slider__img">
+                        <img src="{{ item }}" alt="{{ name }}">
+                    </div>
+                </swiper-slide>
+            {% endfor %}
+            <div class="swiper-button-prev card-slider__prev js-slider-prev" slot="button-prev"></div>
+            <div class="swiper-button-next card-slider__next js-slider-next" slot="button-next"></div>
+            <div class="swiper-pagination card-slider__pag js-slider-pag" slot="pagination"></div>
+        </swiper>
+    </div>
+</card-slider>

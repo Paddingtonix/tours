@@ -1,0 +1,238 @@
+.modal-rating-reviews
+    padding: 16px 18px 40px 24px
+
+    &-rating
+        padding-left: 40px
+        margin-bottom: 64px
+        display: flex
+        align-items: flex-start
+        justify-content: space-between
+
+    &__filter
+        margin-bottom: 32px
+
+    &-comments
+        &:not(:last-child)
+            margin-bottom: 32px
+
+        &__inner
+            display: flex
+
+            &:not(:last-child)
+                margin-bottom: 32px
+
+            &-left
+                margin-right: 2.886%
+                width: 30.556%
+
+                &-user
+                    display: flex
+                    margin-bottom: 32px
+
+                    &-avatar
+                        width: 48px
+                        height: 48px
+                        margin-right: 12px
+                        font-size: 18px
+                        background-color: #eef0f4
+                        border-radius: 100px
+                        border: 1px solid $border
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        flex-shrink: 0
+                        color: $gray-text
+
+                    &-name
+                        display: flex
+                        flex-direction: column
+                        justify-content: space-around
+
+                        span
+                            &:first-child
+                                margin-bottom: 8px
+                                line-height: 100%
+                                font-weight: 500
+                                font-size: 18px
+
+                            &:last-child
+                                font-size: 14px
+                                color: $light-gray
+                                line-height: 120%
+
+                    &-detailed 
+                        .__wrap-text
+                            margin-bottom: 8px
+
+                        span
+                            &:nth-child(2n)
+                                font-size: 14px
+
+                            &:nth-child(2n+1)
+                                margin-right: 8px
+                                font-size: 14px
+                                color: $dark-gray
+
+            &-middle
+                width: 61.99%
+                margin-right: 2.886%
+
+                &-text
+                    margin-bottom: 24px
+                    line-height: 22px
+
+                    &-img
+                        display: flex
+                        overflow-x: scroll
+                        width: 100%
+                        max-width: 493px
+                        padding-bottom: 4px
+
+                        &-slider
+                            height: 96px
+                            min-width: 96px
+
+                            &:not(:last-child)
+                                margin-right: 8px
+
+                            img
+                                border-radius: 8px
+
+            &-right
+                &-assessment
+                    width: 48px
+                    height: 48px
+                    background-color: #e9f6f2
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    border-radius: 12px
+
+                    span
+                        color: $primary
+                        font-size: 18px
+
+.rating-chart
+    width: 260px
+    aspect-ratio: 1
+    display: inline-grid
+    place-content: center
+    animation: p 1s .5s both
+    position: relative
+
+    &::after
+        content: ""
+        position: absolute
+        border-radius: 50%
+        border: 1px solid $border
+        z-index: 1
+        height: 93%
+        width: 93%
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+
+    &:before
+        content: ""
+        position: absolute
+        border-radius: 50%
+        inset: 0
+        background: conic-gradient($primary calc(var(--percentage) * 1%), #0000 0)
+        -webkit-mask: radial-gradient(farthest-side, #0000 calc(99% - 15px), #000 calc(100% - 15px))
+        mask: radial-gradient(farthest-side, #0000 calc(99% - 15px), #000 calc(100% - 15px))
+        z-index: 2
+
+    &__inner
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        &-general
+            margin-bottom: 8px
+            font-size: 14px
+            color: $light-gray
+
+        &-value
+            font-size: 48px
+            margin-bottom: 8px
+
+        &-from
+            font-size: 14px
+            color: $light-gray
+
+.rating-line
+    margin-top: 17px
+    width: 59.092%
+
+    .line
+        margin-bottom: 20px
+
+    &-wrapper
+        margin-top: 32px
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+
+    &__line
+        width: 47.08%
+        display: flex
+        flex-direction: column
+
+        &:not(&:nth-child(2n))
+            margin-right: 5.09%
+
+        &-title
+            margin-bottom: 8px
+            display: flex
+
+            span
+                font-size: 13px
+                line-height: 18px
+
+                &:first-child
+                    margin-right: 8px
+
+    &__title
+        font-size: 15px
+        line-height: 22px
+
+    &__desc
+        margin-top: 8px
+        font-size: 13px
+        color: $dark-gray
+        width: 80%
+        line-height: 18px
+
+.line
+    height: 4px
+    aspect-ratio: 1
+    display: inline-grid
+    place-content: center
+    position: relative
+    border-radius: 2px
+    overflow: hidden
+
+    &::after
+        content: ""
+        position: absolute
+        width: 100%
+        height: 4px
+        background: $bg
+        z-index: 1
+
+    &:before
+        content: ""
+        position: absolute
+        inset: 0
+        width: calc(var(--percentage) * 1%)
+        background: $primary
+        z-index: 2
+
+@property --percentage
+    syntax: '<number>'
+    inherits: true
+    initial-value: 0
+
+@keyframes p
+    from
+        --percentage: 0

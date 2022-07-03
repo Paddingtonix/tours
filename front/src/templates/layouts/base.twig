@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html prefix="og: //ogp.me/ns#">
+	<head>
+		<meta charset="utf-8"/> {% block head %}{% endblock %}
+		{{ head|raw }}
+		<meta name="viewport" content="width=device-width"/>
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="theme-color" content="#ffffff">
+		<meta name="cmsmagazine" content="d5fdaae2e783795c41b7b5df1a6739b1"/> </head>
+
+	<body>
+		<div id="app" :class="{_visible: loadVue}">
+			{% include "@components/base/header/template.twig" %}
+			<transition name="page">
+				<router-view class="page">
+					<div id="content" v-if="false">
+						<transition>
+							{% block content %}{% endblock %}
+						</transition>
+					</div>
+				</router-view>
+			</transition>
+			{% include "@components/base/footer/template.twig" %}
+			{% include "@components/base/curtain/template.twig" %}
+			<modal-cmp/>
+		</div>
+
+		<script>
+		</script>
+
+		{% block body_end %}{% endblock %}{{ body|raw }}
+	</body>
+</html>

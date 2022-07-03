@@ -1,0 +1,21 @@
+<section class="insurance page-tour__wrap" v-animation:bottom.delay> 
+    {% for item in insurance %}
+        <div class="insurance-card card-style">
+            <div class="insurance-card__inner">
+                <div class="insurance-card__wrap">
+                    <h4 class="insurance-card__title">{{ item.name }}</h4>
+                    <p class="insurance-card__text">{{ item.desc }}</p>
+                </div>
+                {% if item.img %}
+                    <div class="insurance-card__img">
+                        <img src="{{ item.img }}" alt="insurance"/>
+                    </div>
+                {% endif %}
+            </div>
+            {% include "@components/ui-components/link-arrow/template.twig" with {
+                text: 'Полное описание покрытия',
+                link: item.link
+            } %}
+        </div>
+    {% endfor %}
+</section>

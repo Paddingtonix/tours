@@ -1,0 +1,51 @@
+
+<div class="detailed-tour">
+    <div class="detailed-tour__top">
+        <div class="detailed-tour__main">
+            <h4 class="detailed-tour__title">Основное</h4>
+            {% for item in tour.main %}
+                <div class="detailed-tour__item">
+                    {% if item.img %}
+                        <div class="detailed-tour__img">
+                            <img src="{{ item.img }}" alt="{{ item.name }}"/>
+                        </div>
+                    {% endif %}
+                    <span class="detailed-tour__text">{{ item.name }}</span>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="detailed-tour__main">
+            <h4 class="detailed-tour__title">Услуги в отеле</h4>
+            <div class="detailed-tour__column">
+                {% for item in tour.hotelFacilities %}
+                    <div class="detailed-tour__item">
+                        {% if item.img %}
+                            <div class="detailed-tour__img">
+                                <img src="{{ item.img }}" alt="{{ item.name }}"/>
+                            </div>
+                        {% endif %}
+                        <span class="detailed-tour__text">{{ item.name }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="detailed-tour__main">
+            <h4 class="detailed-tour__title">Услуги в номере</h4>
+            <div class="detailed-tour__column">
+                {% for item in tour.roomFacilities %}
+                    <div class="detailed-tour__item">
+                        {% if item.img %}
+                            <div class="detailed-tour__img">
+                                <img src="{{ item.img }}" alt="{{ item.name }}"/>
+                            </div>
+                        {% endif %}
+                        <span class="detailed-tour__text">{{ item.name }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="detailed-tour__desc html">
+        {{ tour.description|raw }}
+    </div>
+</div> 

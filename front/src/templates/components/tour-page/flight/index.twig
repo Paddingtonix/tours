@@ -1,0 +1,75 @@
+<section class="page-tour-flight" v-animation:bottom.delay>
+    <div 
+        class="page-tour-flight__container card-style"
+    >
+        {% for item in flight %}
+            <div class="page-tour-flight__item">
+                <div class="page-tour-flight__logos">
+                    <div class="page-tour-flight__logos-container">
+                        {% for elem in item.logo %}
+                        <div class="page-tour-flight__logos-container-wrap">
+                            <img src="{{ elem.img }}" alt="{{ elem.name }}" />
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% for elem in item.logo %}
+                        <div class="page-tour-flight__logos-name">{{ elem.name }}</div>
+                    {% endfor %}                        
+                </div>
+                <div class="page-tour-flight-wrapper">
+                    <div class="page-tour-flight-wrapper__card">
+                        <div class="time">{{ item.startTime }}</div>
+                        <div class="date">{{ item.startDate }}</div>
+                        <div class="city">{{ item.startCity }}</div>
+                        <div class="airport">
+                            {{ item.startAirport }},
+                            {% if item.shortStartAirport %}
+                                {{item.shortStartAirport}}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="page-tour-flight-wrapper__continuation">
+                        <div class="page-tour-flight-wrapper__continuation-time">{{ item.flightTime }}</div>
+                        <div class="page-tour-flight-wrapper__continuation-trip 
+                            {% if item.tripTime %}tooltip{% endif %}"
+                        >
+                            {{ item.trip }}
+                            {% if item.tripTime %}
+                                <span class="__trip">
+                                    {{ item.tripTime }}
+                                        <tooltip-cmp 
+                                            text='{{item.transfer}} {{item.tripTime}}'
+                                        >
+                                        </tooltip-cmp>
+                                </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="page-tour-flight-wrapper__card">
+                        <div class="time">{{ item.endTime }}</div>
+                        <div class="date">{{ item.endDate }}</div>
+                        <div class="city">{{ item.endCity }}</div>
+                        <div class="airport">
+                            {{ item.endAirport }},
+                            {% if item.shortStartAirport %}
+                                {{item.shortEndAirport}}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="page-tour-flight__luggage">
+                    {% if item.noLuggage == 1 %}
+                        <div class="page-tour-flight__luggage-container">
+                            <img src="/uploads/img/tour/noLuggage.png" alt="no luggage"/>
+                        </div>
+                    {% endif %}
+                    {% if item.smallLuggage == 1 %}
+                        <div class="page-tour-flight__luggage-container">
+                            <img src="/uploads/img/tour/smallLuggage.png" alt="small luggage"/>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
